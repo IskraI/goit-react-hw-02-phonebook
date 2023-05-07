@@ -1,11 +1,13 @@
 import React from 'react';
+import css from './Filter.module.css';
 
 const Filter = ({ value, onChange }) => {
   return (
-    <form>
-      <label>
-        Find contacts by name
+    <form className={css.form}>
+      <label className={css.label}>
+        <span className={css.input__name}>Find contacts by name</span>
         <input
+          className={css.input__data}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"

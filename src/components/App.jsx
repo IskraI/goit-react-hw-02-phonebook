@@ -3,6 +3,7 @@ import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
 import { nanoid } from 'nanoid';
+import css from './App.module.css';
 
 class App extends Component {
   state = {
@@ -65,11 +66,14 @@ class App extends Component {
     const { filter } = this.state;
 
     return (
-      <div>
-        <h1>Phonebook</h1>
-        <ContactForm onSubmit={this.formSubmitHandler} />
+      <div className={css.container}>
+        <h1 className={css.title}>Phonebook</h1>
+        <ContactForm
+          clasName={css.contact__form}
+          onSubmit={this.formSubmitHandler}
+        />
 
-        <h2>Contacts</h2>
+        <h2 className={css.title__contacts}>Contacts</h2>
         <Filter value={filter} onChange={this.changeFilter} />
         <ContactList
           contacts={this.getVisibleContacts()}
