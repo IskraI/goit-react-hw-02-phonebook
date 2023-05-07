@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './Contact.module.css';
+import PropTypes from 'prop-types';
 
 const Contact = ({ contact, onClick }) => {
   const { name, number } = contact;
@@ -16,4 +17,8 @@ const Contact = ({ contact, onClick }) => {
   );
 };
 
+Contact.propTypes = {
+  contact: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 export default Contact;
